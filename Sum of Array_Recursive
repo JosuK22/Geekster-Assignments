@@ -1,0 +1,29 @@
+//Sum of Array_Recursive
+
+import java.util.Scanner;
+public class Main {
+    static int n;
+    static int arr[] = { 1, 2, 3, 4, 5 };
+    static int findSum(int A[], int N)
+    {
+        if (N <= 0){
+            return 0;
+        }
+        return (findSum(A, N - 1) + A[N - 1]);
+    }
+    public static void main(String[] args){
+        
+        Scanner sc=new Scanner(System.in);  
+        System.out.print("Enter the number of elements you want to store: ");
+        n=sc.nextInt();
+        int[] array = new int[10];
+        
+        System.out.println("Enter the elements of the array: ");  
+        for(int i=0; i<n; i++){
+            array[i]=sc.nextInt();  
+        }
+        System.out.print("Sum is :");
+        System.out.println(findSum(array, n));
+        
+    }
+}
